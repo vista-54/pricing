@@ -1,13 +1,108 @@
-.homepage .title {
-  font-size: 1.5em;
-  text-align: center;
-  margin: 15px; }
+.subscription {
+  background: white;
+  padding: 16px;
+  width: 800px;
+  margin: 0 auto; }
+  .subscription .block_title {
+    text-transform: uppercase;
+    font-weight: 600; }
+  .subscription hr {
+    background: #1f9af5;
+    color: #1f9af5;
+    height: 2px;
+    border: 0; }
+  .subscription .subheader {
+    font-weight: 300; }
+  .subscription .plans {
+    background: #f0f6fe;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px; }
+    .subscription .plans .plan {
+      cursor: pointer;
+      width: 30%;
+      background: white;
+      margin-top: 20px; }
+      .subscription .plans .plan .title {
+        text-transform: uppercase;
+        text-align: center;
+        color: #1f9af5; }
+      .subscription .plans .plan .description {
+        text-align: center;
+        font-weight: 400;
+        font-size: 20px; }
+      .subscription .plans .plan .price {
+        text-align: center; }
+        .subscription .plans .plan .price .amount {
+          position: relative;
+          font-size: 60px; }
+          .subscription .plans .plan .price .amount .currency {
+            position: absolute;
+            font-size: 20px;
+            top: 17px;
+            left: -9px; }
+      .subscription .plans .plan .options {
+        display: flex;
+        text-align: center;
+        background: #1f9af5;
+        padding: 10px 0;
+        color: white;
+        justify-content: space-around; }
+        .subscription .plans .plan .options .option {
+          font-size: 12px; }
+  .subscription .active {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border: 1px solid; }
+  .subscription .button_block {
+    margin-bottom: 20px; }
+    .subscription .button_block button:first-child {
+      background: #1f9af5 !important; }
+    .subscription .button_block button:last-child {
+      background: #d4d4d4 !important; }
+  .subscription .additional {
+    border: 1px solid black; }
+    .subscription .additional .more_staff {
+      border-bottom: 1px solid black;
+      padding-bottom: 0; }
+      .subscription .additional .more_staff .title {
+        color: #314d8e;
+        font-weight: bold; }
+      .subscription .additional .more_staff .description {
+        line-height: 20px; }
+    .subscription .additional .table {
+      display: flex; }
+      .subscription .additional .table .range_block {
+        width: 60%;
+        border-right: 1px solid black; }
+        .subscription .additional .table .range_block .techs {
+          border-bottom: 1px solid black; }
+      .subscription .additional .table .discount_block {
+        width: 40%; }
+        .subscription .additional .table .discount_block p {
+          text-align: center;
+          font-size: 35px; }
+        .subscription .additional .table .discount_block p:first-child {
+          color: #314d8e; }
+  .subscription .more_staff, .subscription .techs, .subscription .techs_desc {
+    padding: 10px; }
+  .subscription .techs_desc {
+    border-bottom: 1px solid black;
+    background: #1f9af5;
+    color: white; }
 
-.homepage .temp, .homepage .wind {
-  padding: 10px;
-  margin: 5px;
-  border: 1px solid #ccc;
-  background: #fefefe; }
+md-slider.md-default-theme.md-warn .md-thumb:after, md-slider.md-warn .md-thumb:after {
+  border-color: #1f9af5;
+  background-color: #1f9af5; }
+
+md-slider.md-default-theme.md-warn .md-track.md-track-fill, md-slider.md-warn .md-track.md-track-fill {
+  background-color: #1f9af5; }
+
+md-slider-container span {
+  color: #314d8e;
+  padding-top: 24px; }
+
+md-slider-container label {
+  color: #314d8e; }
 
 .login {
   background: white;

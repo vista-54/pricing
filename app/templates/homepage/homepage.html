@@ -1,11 +1,96 @@
-<div class="homepage">
-    <div class="title">
-        Погода в городе <b>{{vm.weather.name}}</b>
+<div class="subscription">
+    <p class="block_title">Chose your base subscription</p>
+    <hr>
+    <h5 class="subheader">You can add extra staff after</h5>
+    <div class="plans">
+        <div class="plan" ng-class="vm.selected==='Lab'?'active':'inactive'" ng-click="vm.select('Lab')">
+            <h3 class="title">Lab</h3>
+            <h3 class="description">Water testing for your store</h3>
+            <h3 class="price"><span class="amount"><span class="currency">$</span>{{vm.sum.default_lab}}</span><span
+                    class="period">/mo</span>
+            </h3>
+            <div class="options">
+                <span class="option">{{vm.quantity.lab}}xLAB</span>
+            </div>
+        </div>
+        <div class="plan inactive" ng-class="vm.selected==='Field'?'active':'inactive'" ng-click="vm.select('Field')">
+            <h3 class="title">Field</h3>
+            <h3 class="description">Perfect for your pool servicing business</h3>
+            <h3 class="price"><span class="amount"><span class="currency">$</span>{{vm.sum.default_field}}</span><span
+                    class="period">/mo</span>
+            </h3>
+            <div class="options">
+                <span class="option">{{vm.quantity.default_tech}}xTECH</span>
+                <span class="option">{{vm.quantity.default_admins}}xADMIN</span>
+            </div>
+        </div>
+        <div class="plan" ng-class="vm.selected==='Pro'?'active':'inactive'" ng-click="vm.select('Pro')">
+            <h3 class="title">Pro</h3>
+            <h3 class="description">You have a shop and service team</h3>
+            <h3 class="price"><span class="amount"><span class="currency">$</span>{{vm.sum.default_pro}}</span><span
+                    class="period">/mo</span>
+            </h3>
+            <div class="options">
+                <span class="option">{{vm.quantity.lab}}xLAB</span>
+                <span class="option">{{vm.quantity.default_tech}}xTECH</span>
+                <span class="option">{{vm.quantity.default_admins}}xADMIN</span>
+            </div>
+        </div>
     </div>
-    <div class="temp">
-        Температура: {{vm.weather.main.temp}}
+    <div class="additional" ng-if="(vm.selected==='Field'||vm.selected==='Pro')&&vm.additional">
+        <div class="more_staff">
+            <div class="title">Add more staff?</div>
+            <div class="subtitle">Use the slider to add extra users<br>Your monthly subscription is automatically
+                calculated
+                above. Your volume discount is shown at right
+            </div>
+        </div>
+        <div class="table">
+            <div class="range_block">
+                <div class="techs">
+                    <md-slider-container>
+                        <label>Techs</label>
+                        <span>1></span>
+                        <md-slider min="1" max="10" aria-label="red" ng-model="vm.quantity.tech"
+                                   class="md-warn">
+                        </md-slider>
+                        <span>{{vm.quantity.tech}}</span>
+                    </md-slider-container>
+                </div>
+                <div class="techs_desc"><b>Tech users</b> have full mobile access to all services</div>
+                <div class="techs">
+                    <md-slider-container>
+                        <label>Admins</label>
+                        <span>1></span>
+                        <md-slider min="1" max="10" aria-label="red" ng-model="vm.quantity.admins"
+                                   class="md-warn">
+                        </md-slider>
+                        <span>{{vm.quantity.admins}}</span>
+                    </md-slider-container>
+                </div>
+                <div class="techs_desc"><b>Admin users</b> have access to customer database/billing</div>
+
+            </div>
+            <div class="discount_block">
+                <p ng-if="vm.quantity.tech==10">
+                    Please contact us for enterprise discounts
+                </p>
+                <p ng-if="vm.quantity.tech!==10">Discount</p>
+                <p ng-if="vm.quantity.tech !==10" class="discount">
+                    {{vm.discount=vm.quantity.tech>=5?((vm.quantity.tech-5)*5+10):0}}%({{(vm.quantity.tech * 49 +
+                    vm.quantity.admins * 10 + 45)*vm.discount/100}}$)</p>
+            </div>
+        </div>
+
     </div>
-    <div class="wind">
-        Ветер: {{vm.weather.wind.speed}}м/с
+    <div class="button_block" ng-if="vm.selected&&vm.additional">
+        <md-button class="md-raised  md-primary" ng-click="vm.updateSubscriptions()">Update Subscription</md-button>
+        <md-button class="md-raised">Cancel Subscription</md-button>
     </div>
+
+    <div class="button_block" ng-if="!vm.additional">
+        <md-button class="md-raised  md-primary" ng-click="vm.changeSubscriptions()">Change Subscription</md-button>
+        <md-button class="md-raised">Cancel Subscription</md-button>
+    </div>
+
 </div>
