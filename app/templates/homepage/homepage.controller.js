@@ -53,8 +53,8 @@
             vm.sum.default_field = vm.sum.default_field - (vm.sum.default_field * (vm.discount / 100));
             vm.sum.default_pro = vm.sum.default_pro - (vm.sum.default_pro * (vm.discount / 100));
             vm.additional = false;
-
-            // vm.totalsum =
+            vm.sum.default_field = vm.sum.default_field.toFixed(2);
+            vm.sum.default_pro = vm.sum.default_pro.toFixed(2);
         }
 
         function changeSubscriptions() {
