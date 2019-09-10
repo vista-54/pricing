@@ -20,8 +20,8 @@
                     class="period">/mo</span>
             </h3>
             <div class="options">
-                <span class="option">{{vm.quantity.default_tech}}xTECH</span>
-                <span class="option">{{vm.quantity.default_admins}}xADMIN</span>
+                <span class="option">{{vm.quantity.tech}}xTECH</span>
+                <span class="option">{{vm.quantity.admins}}xADMIN</span>
             </div>
         </div>
         <div class="plan" ng-class="vm.selected==='Pro'?'active':'inactive'" ng-click="vm.select('Pro')">
@@ -32,8 +32,8 @@
             </h3>
             <div class="options">
                 <span class="option">{{vm.quantity.lab}}xLAB</span>
-                <span class="option">{{vm.quantity.default_tech}}xTECH</span>
-                <span class="option">{{vm.quantity.default_admins}}xADMIN</span>
+                <span class="option">{{vm.quantity.tech}}xTECH</span>
+                <span class="option">{{vm.quantity.admins}}xADMIN</span>
             </div>
         </div>
     </div>
