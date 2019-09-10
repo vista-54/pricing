@@ -52,7 +52,7 @@
                         <label>Techs</label>
                         <span>1></span>
                         <md-slider min="1" max="10" aria-label="red" ng-model="vm.quantity.tech"
-                                   class="md-warn">
+                                   class="md-warn" ng-change="vm.updateSubscriptions()">
                         </md-slider>
                         <span>{{vm.quantity.tech}}</span>
                     </md-slider-container>
@@ -63,6 +63,7 @@
                         <label>Admins</label>
                         <span>1></span>
                         <md-slider min="1" max="10" aria-label="red" ng-model="vm.quantity.admins"
+                                   ng-change="vm.updateSubscriptions()"
                                    class="md-warn">
                         </md-slider>
                         <span>{{vm.quantity.admins}}</span>
@@ -83,10 +84,10 @@
         </div>
 
     </div>
-    <div class="button_block" ng-if="vm.selected&&vm.additional">
-        <md-button class="md-raised  md-primary" ng-click="vm.updateSubscriptions()">Update Subscription</md-button>
-        <md-button class="md-raised">Cancel Subscription</md-button>
-    </div>
+    <!--<div class="button_block" ng-if="vm.selected&&vm.additional">-->
+        <!--<md-button class="md-raised  md-primary" ng-click="vm.updateSubscriptions()">Update Subscription</md-button>-->
+        <!--<md-button class="md-raised">Cancel Subscription</md-button>-->
+    <!--</div>-->
 
     <div class="button_block" ng-if="!vm.additional">
         <md-button class="md-raised  md-primary" ng-click="vm.changeSubscriptions()">Change Subscription</md-button>

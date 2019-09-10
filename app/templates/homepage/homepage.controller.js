@@ -5,12 +5,11 @@
         .controller('HomepageController', HomepageController);
 
 
-    HomepageController.$inject = ['data', '$mdDialog'];
+    HomepageController.$inject = ['$mdDialog'];
 
-    function HomepageController(data, $mdDialog) {
+    function HomepageController($mdDialog) {
         let vm = this;
 
-        vm.weather = data;
         vm.select = select;
         vm.selected = 0;
         vm.quantity = {
@@ -52,7 +51,7 @@
                 vm.quantity.admins * 10);
             vm.sum.default_field = vm.sum.default_field - (vm.sum.default_field * (vm.discount / 100));
             vm.sum.default_pro = vm.sum.default_pro - (vm.sum.default_pro * (vm.discount / 100));
-            vm.additional = false;
+            // vm.additional = false;
             vm.sum.default_field = vm.sum.default_field.toFixed(2);
             vm.sum.default_pro = vm.sum.default_pro.toFixed(2);
         }
