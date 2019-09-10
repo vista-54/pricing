@@ -13,8 +13,6 @@
         vm.select = select;
         vm.selected = 0;
         vm.quantity = {
-            default_tech: 1,
-            default_admins: 1,
             tech: 1,
             admins: 1,
             lab: 1
@@ -45,8 +43,6 @@
         function updateSubscriptions() {
             vm.discount = vm.quantity.tech >= 5 ? ((vm.quantity.tech - 5) * 5 + 10) : 0;
             vm.sumOfDiscount = (vm.quantity.tech * 49 + vm.quantity.admins * 10 + 45) * vm.discount / 100;
-            vm.quantity.default_admins = vm.quantity.admins;
-            vm.quantity.default_tech = vm.quantity.tech;
             vm.sum.default_pro = (vm.quantity.tech * 49 +
                 vm.quantity.admins * 10 + 45);
             vm.sum.default_field = (vm.quantity.tech * 49 +
@@ -65,13 +61,12 @@
             var confirm = $mdDialog.confirm()
                 .title('Just Lab?')
                 .textContent('Only select this option if you' +
-                    'have no field techs' +
-                    'don’t need quoting and invoicing systems')
+                    ' have no field techs' +
+                    ' don’t need quoting and invoicing systems')
                 .ok('Continue')
                 .cancel('Add field');
 
             $mdDialog.show(confirm).then(function () {
-                $scope.status = 'You decided to get rid of your debt.';
             }, function () {
                 vm.selected = 'Pro';
             });

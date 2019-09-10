@@ -78,10 +78,14 @@
                 </p>
                 <p ng-if="vm.quantity.tech!==10">Discount</p>
                 <p ng-if="vm.quantity.tech !==10" class="discount">
-                    {{vm.discount}}%({{vm.sumOfDiscount}}$)</p>
+                    {{vm.discount}}%(${{vm.sumOfDiscount}})</p>
             </div>
         </div>
 
+    </div>
+    <div class="button_block" ng-if="vm.selected&&vm.additional">
+        <md-button class="md-raised  md-primary" ng-click="vm.updateSubscriptions()">Update Subscription</md-button>
+        <md-button class="md-raised">Cancel Subscription</md-button>
     </div>
     <div class="button_block" ng-if="!vm.additional">
         <md-button class="md-raised  md-primary" ng-click="vm.changeSubscriptions()">Change Subscription</md-button>
